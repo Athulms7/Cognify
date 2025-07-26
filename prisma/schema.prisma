@@ -17,11 +17,34 @@ model User {
   sessions      Session[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
- 
+  subscription String @default("free")
+  
+  courses Course[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+model Course {
+  id        String        @id @default(cuid())
+  title     String
+  userId    String
+  user      User          @relation(fields: [userId], references: [id])
+  videos    CourseVideo[]
+  createdAt DateTime      @default(now())
+}
+
+model CourseVideo {
+  id        String   @id @default(cuid())
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id])
+  title     String
+  url       String
+  thumbnail String
+  order     Int
+  createdAt DateTime @default(now())
+}
+
  
+
 model Account {
   userId            String
   type              String
