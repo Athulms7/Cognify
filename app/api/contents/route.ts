@@ -1,12 +1,14 @@
 import axios from "axios"
 import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from 'next/server';
-import { headers } from 'next/headers';
 
 
-export async function GET() {
-  const headersList = headers();
-  const userId = (await headersList).get("id") || "";
+
+export async function GET(req:NextRequest) {
+  // const headersList = headers();
+  // const userId = (await headersList).get("id") || "";
+  const { searchParams } = new URL(req.url);
+  const userId = searchParams.get("id") || "";
 
   const courses = await prisma.course.findMany({
     where: {
@@ -37,10 +39,9 @@ export async function GET() {
 
 
 export async  function Coursedata(id:string){
+  
     const resp=await axios.get("http://localhost:3000/api/contents",{
-        headers:{
-            id:id
-        }
+      params:{id},
     })
     return resp.data.courses
 

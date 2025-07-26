@@ -1,7 +1,6 @@
 import { authOptions } from "@/lib/auth"
 import { getServerSession } from "next-auth"
 import { Coursedata } from "../api/contents/route"
-import { searchYouTube } from "../api/youtube/route"
 import { useState } from "react"
 import { Input } from "@/components/input"
 import { Createcourses } from "../api/generatecourse/route"

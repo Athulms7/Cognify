@@ -12,7 +12,6 @@ function WelcomeBanner({session}:any) {
   const [isVisible, setIsVisible] = useState(false);
   const [timeOfDay, setTimeOfDay] = useState("");
 
-  // Set time-based greeting
   useEffect(() => {
     const hour = new Date().getHours();
     if (hour < 12) setTimeOfDay("morning");

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { searchYouTube } from "../youtube/route";
+import { searchYouTube } from "@/lib/youtube";
 import { prisma } from "@/lib/prisma";
 import { generateSearchQueries } from "@/lib/gemini";
 import axios from "axios";
