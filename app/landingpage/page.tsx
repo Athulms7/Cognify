@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Input } from "@/components/input"
 import { Createcourses } from "../api/generatecourse/route"
 import { CourseType } from "@/lib/types"
+import CourseList from "../(dashboard)/_components/courses"
 
 export default async function landingpage(){
     const session = await getServerSession(authOptions)
@@ -22,7 +23,9 @@ export default async function landingpage(){
     
 
     return(
+      
         <div>
+          <CourseList/>
           {/* {JSON.stringify(data)} */}
             ladingpageeee
             <iframe id="player"  width="100" height="150"

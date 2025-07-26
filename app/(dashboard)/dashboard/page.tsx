@@ -4,7 +4,9 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import WelcomeBanner from "../_components/welcomebanner";
 import Coursecard from "../_components/courses";
-import CreateCourseCard from "../_components/coursecard";
+import { CreateCourseCard } from "../_components/createcourse";
+
+import CourseList from "../_components/courses";
 
 
 
@@ -22,12 +24,16 @@ export default async function Dashboard() {
   
 
   return (
-    <div className="flex flex-col items-center justify-center  w-screen">
+    <div className="flex flex-col items-center justify-center mt-20  w-screen">
       <div className=" justify-center">
       <WelcomeBanner session={session}/>
       <SignoutButton />
-      <CreateCourseCard/>
-      <Coursecard/>
+      <div className="flex gap-4">
+    <CreateCourseCard/>
+    <CourseList/>
+      
+      </div>
+      
 
       </div>
       
