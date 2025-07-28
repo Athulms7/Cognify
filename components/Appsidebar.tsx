@@ -42,7 +42,7 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupLabel>
             <div className="font-bold text-2xl">
-              StudyBudy
+              Cognify
             </div>
           </SidebarGroupLabel>
           <SidebarGroupContent>

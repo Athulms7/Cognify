@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { DarkButton } from "./darkbutton";
-// import { DarkButton } from "./darkbutton";
+
 
 
 
@@ -24,7 +24,7 @@ export function Appbar() {
             {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
           <Link href="/" className="font-bold text-2xl text-dark-blue-800">
-            StudyBudy
+            Cognify
           </Link>
         </div>
 

@@ -10,7 +10,7 @@ import CourseList from "../_components/courses";
 
 export default async function Dashboard() {
   const session = await getServerSession(authOptions);
-
+  console.log(session?.user)
   if (!session || !session.user) {
     return redirect("/signin");
   }
@@ -22,7 +22,7 @@ export default async function Dashboard() {
         <WelcomeBanner session={session} />
         <SignoutButton />
         <div className="flex gap-4">
-          <CourseList />
+          <CourseList user={id} />
         </div>
       </div>
     </div>

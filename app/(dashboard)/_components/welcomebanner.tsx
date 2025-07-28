@@ -55,7 +55,7 @@ function WelcomeBanner({session}:any) {
 
   return (
     <div
-      className={`w-150 md:w-250  p-8 bg-gradient-to-br from-primary via-black to-primary/80 dark:from-primary/90 dark:to-primary/80 rounded-3xl shadow-xl transition-all duration-700  transform ${
+      className={`w-150 md:w-250  p-8 bg-gradient-to-br from-primary via-black to-primary/80  rounded-3xl shadow-xl transition-all duration-700  transform ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       } border`}
       aria-live="polite"
