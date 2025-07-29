@@ -47,6 +47,7 @@ export function Buttongenerate({ userId }: ButtonGenerateProps) {
   const coursetype = searchParams.get("selected");
   const [loading, setLoading] = useState(false);
   const [topic, setTopic] = useState("");
+  const router=useRouter()
   const [difficulty, setDifficulty] = useState("");
 
   const handleGenerate = async () => {
