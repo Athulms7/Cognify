@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { DarkButton } from "./darkbutton";
+import SignoutButton from "./signoutbutton";
 
 
 
@@ -33,6 +34,7 @@ export function Appbar() {
           
           
           <DarkButton />
+          <SignoutButton/>
         
           
         </nav>

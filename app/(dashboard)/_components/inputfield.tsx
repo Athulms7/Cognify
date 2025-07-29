@@ -34,6 +34,7 @@
 
 import { Createcourses } from "@/app/api/generatecourse/route";
 import { useSearchParams } from 'next/navigation';
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -44,7 +45,6 @@ interface ButtonGenerateProps {
 export function Buttongenerate({ userId }: ButtonGenerateProps) {
   const searchParams = useSearchParams();
   const coursetype = searchParams.get("selected");
-
   const [loading, setLoading] = useState(false);
   const [topic, setTopic] = useState("");
   const [difficulty, setDifficulty] = useState("");
@@ -58,10 +58,10 @@ export function Buttongenerate({ userId }: ButtonGenerateProps) {
     catch{
         toast.error("failed to generate")
     }
-   // You may include difficulty in API
+   
     setLoading(false);
-    }
-    // router.push("/dashboard") // if you want to redirect
+  }
+    
   };
 
   return (

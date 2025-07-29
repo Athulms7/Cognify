@@ -20,7 +20,8 @@ export default async function Dashboard() {
     <div className="flex flex-col items-center justify-center mt-20  w-screen">
       <div className=" justify-center">
         <WelcomeBanner session={session} />
-        <SignoutButton />
+       
+       
         <div className="flex gap-4">
           <CourseList user={id} />
         </div>

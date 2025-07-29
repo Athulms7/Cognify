@@ -15,7 +15,7 @@ function WelcomeBanner({session}:any) {
   useEffect(() => {
     const hour = new Date().getHours();
     if (hour < 12) setTimeOfDay("morning");
-    else if (hour < 18) setTimeOfDay("afternoon");
+    else if (hour < 16) setTimeOfDay("afternoon");
     else setTimeOfDay("evening");
 
     // Trigger animation after component mounts
@@ -55,7 +55,7 @@ function WelcomeBanner({session}:any) {
 
   return (
     <div
-      className={`w-150 md:w-250  p-8 bg-gradient-to-br from-primary via-black to-primary/80  rounded-3xl shadow-xl transition-all duration-700  transform ${
+      className={`w-150 md:w-250  p-8 bg-gradient-to-br from-primary via-black to-primary/80 mb-5  rounded-3xl shadow-xl transition-all duration-700  transform ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       } border`}
       aria-live="polite"
