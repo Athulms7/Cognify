@@ -46,3 +46,4 @@ export async  function Coursedata(id:string){
     return resp.data.courses
 
 }
+

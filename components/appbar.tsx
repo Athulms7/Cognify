@@ -24,7 +24,7 @@ export function Appbar() {
           >
             {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-          <Link href="/" className="font-bold text-2xl text-dark-blue-800">
+          <Link href="/dashboard" className="font-bold text-2xl text-dark-blue-800">
             Cognify
           </Link>
         </div>

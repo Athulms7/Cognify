@@ -6,6 +6,7 @@ import { Coursedata } from "@/app/api/contents/route";
 
 import { CreateCourseCard } from "./createcourse";
 import { Skeleton } from "@/components/ui/skeleton"
+import Link from "next/link";
 
 interface Course {
   id: string;
@@ -42,12 +43,15 @@ console.log(user)
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
     <CreateCourseCard/>
       {courses.map((course) => (
+        
         <CourseCard
           key={course.id}
           title={course.title}
           description={course.description ?? "No description provided"}
           date={new Date(course.createdAt).toLocaleDateString()}
+          courseid={course.id}
         />
+        
       ))}
     </div>
     </div>

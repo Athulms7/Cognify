@@ -1,13 +1,16 @@
 import { CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 interface CourseCardProps {
   title: string;
   description: string;
   date: string;
+  courseid:string
 }
 
-export  function CourseCard({ title, description, date }: CourseCardProps) {
+export  function CourseCard({ title, description, date,courseid }: CourseCardProps) {
   return (
+    <Link href={`/course?courseid=${courseid}`}>
     <div className="bg-black  hover:border-blue-500 hover:shadow-blue-500/50 hover:shadow-lg 
                cursor-pointer text-white border border-neutral-800 rounded-xl p-4 space-y-3 w-full max-w-sm">
       {/* Header */}
@@ -37,5 +40,6 @@ export  function CourseCard({ title, description, date }: CourseCardProps) {
         <button className="bg-blue-600 text-white text-sm px-3 py-1 rounded-md font-medium">Start</button>
       </div>
     </div>
+    </Link>
   );
 }

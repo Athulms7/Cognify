@@ -21,7 +21,6 @@ export default async function Dashboard() {
       <div className=" justify-center">
         <WelcomeBanner session={session} />
        
-       
         <div className="flex gap-4">
           <CourseList user={id} />
         </div>

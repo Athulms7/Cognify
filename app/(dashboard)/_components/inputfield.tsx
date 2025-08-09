@@ -47,20 +47,23 @@ export function Buttongenerate({ userId }: ButtonGenerateProps) {
   const coursetype = searchParams.get("selected");
   const [loading, setLoading] = useState(false);
   const [topic, setTopic] = useState("");
-  const router=useRouter()
   const [difficulty, setDifficulty] = useState("");
 
   const handleGenerate = async () => {
+   
     if (!topic || !difficulty){
         toast.success("Fill all the fields")
     }else{
         setLoading(true);
-    try{const d=await Createcourses(topic, userId);}    
+    try{const d=await Createcourses(topic, userId);
+         window.location.href="/dashboard"
+    }    
     catch{
         toast.error("failed to generate")
     }
    
     setLoading(false);
+    // router.push("/dashboard")
   }
     
   };
