@@ -32,7 +32,7 @@ export default async function landingpage(){
   ></iframe>
   
 <Input/>
-
+  
         </div>
     )
 }
