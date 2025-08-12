@@ -30,10 +30,10 @@ if (existingCourses.length >= maxCourses) {
   );
 }
 
-  const prompt = `Generate 5 YouTube search phrases to learn the topic "${topic}" from beginner to advanced. Return as JSON array.`;
 
-  const queries = await generateSearchQueries(topic);
 
+  const data = await generateSearchQueries(topic);
+  const queries=data.queries
  if (queries.length === 0) {
   return NextResponse.json({ error: "AI did not return valid queries" }, { status: 500 });
 }
@@ -42,6 +42,7 @@ if (existingCourses.length >= maxCourses) {
 const course = await prisma.course.create({
   data: {
     title: topic,
+    description:data.description,
     userId,
   },
 });

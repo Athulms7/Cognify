@@ -26,16 +26,17 @@ model User {
 model Course {
   id        String        @id @default(cuid())
   title     String
+  description String  @default("Learn This course from Beginner to Advanced")
   userId    String
   user      User          @relation(fields: [userId], references: [id])
-  videos    CourseVideo[]
+  videos    CourseVideo[] 
   createdAt DateTime      @default(now())
 }
 
 model CourseVideo {
   id        String   @id @default(cuid())
   courseId  String
-  course    Course   @relation(fields: [courseId], references: [id])
+  course    Course   @relation(fields: [courseId], references: [id],onDelete:Cascade)
   title     String
   url       String
   thumbnail String

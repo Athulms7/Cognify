@@ -17,6 +17,7 @@ export async function GET(req:NextRequest) {
     select: {
       id: true,
       title: true,
+      description:true,
       createdAt: true,
       videos: {
         orderBy: {
@@ -36,6 +37,7 @@ export async function GET(req:NextRequest) {
 
   return Response.json({ courses });
 }
+
 
 
 export async  function Coursedata(id:string){
