@@ -9,6 +9,7 @@ export default async  function Topicselection(){
 
     const session= await getServerSession(authOptions)
     const userid:string=session?.user.id!
+    console.log(session)
     
    
     return(<div>

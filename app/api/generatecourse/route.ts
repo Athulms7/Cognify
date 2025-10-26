@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
   if (!topic || !userId) {
     return NextResponse.json({ error: "Missing topic or userId" }, { status: 400 });
-
+    
   }
   const existingCourses = await prisma.course.findMany({
   where: { userId },
