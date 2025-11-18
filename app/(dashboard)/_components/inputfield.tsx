@@ -1,35 +1,3 @@
-// "use client"
-// import { Createcourses } from "@/app/api/generatecourse/route";
-// import { useSearchParams } from 'next/navigation'
-// import { useRouter } from "next/router";
-
-// import { useState } from "react";
-
-// export  function  Buttongenerate({userId}:{userId:string}){
-//     const searchParams = useSearchParams()
-//   const coursetype = searchParams.get("selected")
-//   const [loading,setloading]=useState(false)
-// console.log(coursetype)
-//    const [topic,settopic]=useState("")
-//     return(<div>
-//         <input className="w-70" type="text" placeholder="What topic Do you need to learn?" onChange={(e:React.ChangeEvent<HTMLInputElement>)=>{
-//                 settopic(e.target.value)
-//                 console.log(topic)
-//             }}></input>
-//         <button className="bg-blue-400 text-secondary-foreground p-2 rounded-2xl" onClick={async()=>{
-//             console.log(topic,"hiii",userId)
-//             setloading(true)
-//             await Createcourses(topic,userId)
-//             setloading(false)
-//             // router.push("/dashboard")
-//         }
-
-//         }>{loading? "generatingg...":"Generate"}</button>
-        
-//     </div>)
-// }
-
-
 "use client"
 
 import { Createcourses } from "@/app/api/generatecourse/route";

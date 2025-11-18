@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Getvideos } from "@/app/api/videos/route";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -19,7 +19,6 @@ export default function VideoGrid() {
   const courseid = searchParams.get("courseid") || "";
   const [videos, setVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     async function fetchVideos() {
       try {
@@ -36,7 +35,9 @@ export default function VideoGrid() {
 
   return (
     <div className="dark:bg-black min-h-screen ml-40 mt-20 flex flex-col items-center p-6 w-300">
-
+      <button className="" onClick={()=>{
+        redirect("/course/quiz")
+      }}>Quiz Generate</button>
         {loading ? (
           <p className="text-gray-500"><div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 " >
     <Skeleton className="h-[300px] w-60 rounded-xl" />
